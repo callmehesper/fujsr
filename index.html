@@ -12,13 +12,17 @@ body{
     margin:0;
 }
 
+/* MAIN CONTAINER */
 .container{
     background:#ffffff;
     padding:25px;
     border-radius:12px;
     box-shadow:0 15px 35px rgba(0,0,0,0.3);
+    max-width:1200px;
+    margin:auto;
 }
 
+/* HEADINGS */
 h2{
     text-align:center;
     color:#1e3c72;
@@ -34,11 +38,13 @@ h3{
     margin-bottom:20px;
 }
 
+/* INPUTS + BUTTONS */
 input,select,button{
-    padding:6px;
+    padding:8px;
     border-radius:6px;
     border:1px solid #ccc;
-    margin:3px;
+    margin:5px 3px;
+    font-size:14px;
 }
 
 button{
@@ -46,40 +52,111 @@ button{
     color:white;
     border:none;
     cursor:pointer;
+    transition:0.3s;
 }
 
 button:hover{
     background:#16305c;
 }
 
+/* TABLES */
 table{
     width:100%;
     border-collapse:collapse;
     margin-top:20px;
+    min-width:800px; /* Prevent squeeze */
 }
 
 th{
     background:#1e3c72;
     color:white;
-    padding:8px;
+    padding:10px;
+    font-size:14px;
 }
 
 td{
     border-bottom:1px solid #ddd;
-    padding:6px;
+    padding:8px;
     text-align:center;
+    font-size:13px;
 }
 
+/* SPECIAL COLORS */
 .holiday{ background:#ffe699; }
 .sunday{ background:#f2f2f2; }
 .leave{ background:#ffcccc; }
 .halfday{ background:#c6f5c6; }
 
+/* SCROLL WRAPPER FOR TABLES */
+#execConfig, #scheduleArea{
+    overflow-x:auto;
+    width:100%;
+}
+
+/* FOOTER */
 .footer{
     text-align:center;
     margin-top:20px;
     font-size:12px;
     color:#666;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE DESIGN  */
+/* ========================= */
+
+@media (max-width: 768px){
+
+body{
+    padding:10px;
+}
+
+.container{
+    padding:15px;
+}
+
+input,select{
+    width:100%;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    margin-top:8px;
+}
+
+.section{
+    display:flex;
+    flex-direction:column;
+}
+
+h2{
+    font-size:20px;
+}
+
+h3{
+    font-size:16px;
+}
+
+table{
+    font-size:12px;
+}
+
+th, td{
+    padding:6px;
+}
+
+}
+
+/* PRINT OPTIMIZATION */
+@media print{
+body{
+    background:white;
+}
+
+button{
+    display:none;
+}
 }
 </style>
 </head>
@@ -283,3 +360,4 @@ loadExecConfig();
 </body>
 
 </html>
+
